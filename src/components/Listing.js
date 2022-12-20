@@ -18,8 +18,7 @@ const Listing = ({items}) => {
                 )
             })}
         </div>
-
-);
+    );
 };
 
 export default Listing;

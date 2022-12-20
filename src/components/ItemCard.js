@@ -12,17 +12,17 @@ const ItemCard = ({img, url, title, currency, price, quantity}) => {
         else if (currency === "EUR") {
             return "€" + price
         }
-        else return price + currency
+        else return price + " " + currency
     }
 
     const getQuantityIndicatorColor = (quantity) => {
         if (quantity <= 10) {
-            return "bg-red-500 "
+            return "bg-red-600 "
         }
         else if (quantity <= 20) {
-            return "bg-yellow-500 "
+            return "bg-yellow-400 "
         }
-        else return "bg-green-500 "
+        else return "bg-green-700 "
     }
 
     if (!title || !price || !currency) {
@@ -39,7 +39,7 @@ const ItemCard = ({img, url, title, currency, price, quantity}) => {
                 <div className="px-5 pb-5">
                     <h3 className="text-gray-900 text-sm tracking-tight p-1">{formatTitle(title)}</h3>
                     <div className="flex items-center justify-between">
-                        <span className="text-3xl font-bold text-gray-900">{formatPrice(price, currency)}</span>
+                        <span className="text-2xl text-green-800 font-bold text-gray-900">{formatPrice(price, currency)}</span>
                         <span className={getQuantityIndicatorColor(quantity) + "text-xl font-bold text-white p-2 shadow-md rounded-lg"}>{quantity + " left"}</span>
                     </div>
                 </div>
